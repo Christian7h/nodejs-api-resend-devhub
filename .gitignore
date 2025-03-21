@@ -1,0 +1,13 @@
+node_modules
+dist
+.env
+.vscode
+.idea
+frontend
+frontend/node_modules
+ejemplo-cliente-vue.js
+instrucciones-postman.md
+instrucciones.md
+README.md
+setup-frontend.sh
+
