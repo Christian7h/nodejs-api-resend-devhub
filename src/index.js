@@ -18,7 +18,7 @@ app.post("/api/send-email", async (req, res) => {
   try {
     const { nombre, celular, email, asunto, mensaje, servicios } = req.body;
     
-    if (!nombre || !celular || !email || (!asunto && !servicios) || !mensaje) {
+    if (!nombre || !celular || !email || (asunto && !servicios) || !mensaje) {
       return res.status(400).json({ error: "Todos los campos son obligatorios" });
     }
     

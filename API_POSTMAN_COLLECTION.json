@@ -1,0 +1,138 @@
+{
+  "info": {
+    "_postman_id": "3e7b2fc9-a421-4e00-8d7f-c65d5bc8a71e",
+    "name": "API Form Resend",
+    "description": "Colección para probar la API de formulario de contacto con Resend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Enviar Correo - Asunto Simple",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Juan Prueba\",\n  \"celular\": \"912345678\",\n  \"email\": \"correo.prueba@ejemplo.com\",\n  \"asunto\": \"Consulta general\",\n  \"mensaje\": \"Este es un mensaje de prueba enviado desde Postman para verificar el funcionamiento de la API.\"\n}"
+        },
+        "url": {
+          "raw": "https://nodejs-api-resend-devhub-production.up.railway.app/api/send-email",
+          "protocol": "https",
+          "host": [
+            "nodejs-api-resend-devhub-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "send-email"
+          ]
+        },
+        "description": "Envío de correo con formato básico usando un asunto simple"
+      },
+      "response": []
+    },
+    {
+      "name": "Enviar Correo - Con Servicios",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"María Cliente\",\n  \"celular\": \"+56912345678\",\n  \"email\": \"maria@ejemplo.com\",\n  \"servicios\": [\"Desarrollo Web\", \"Diseño UX/UI\", \"E-commerce\"],\n  \"mensaje\": \"Necesito una cotización para crear una tienda online con diseño personalizado.\"\n}"
+        },
+        "url": {
+          "raw": "https://nodejs-api-resend-devhub-production.up.railway.app/api/send-email",
+          "protocol": "https",
+          "host": [
+            "nodejs-api-resend-devhub-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "send-email"
+          ]
+        },
+        "description": "Envío de correo con lista de servicios seleccionados"
+      },
+      "response": []
+    },
+    {
+      "name": "Enviar Correo - Combinado",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Carlos Empresario\",\n  \"celular\": \"912345678\",\n  \"email\": \"carlos@empresa.cl\",\n  \"asunto\": \"Proyecto Urgente\",\n  \"servicios\": [\"Desarrollo Web\", \"SEO\"],\n  \"mensaje\": \"Necesitamos mejorar nuestra presencia web lo antes posible.\"\n}"
+        },
+        "url": {
+          "raw": "https://nodejs-api-resend-devhub-production.up.railway.app/api/send-email",
+          "protocol": "https",
+          "host": [
+            "nodejs-api-resend-devhub-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "send-email"
+          ]
+        },
+        "description": "Envío de correo con asunto y lista de servicios"
+      },
+      "response": []
+    },
+    {
+      "name": "Enviar Correo - Error Validación",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Pedro Incompleto\",\n  \"celular\": \"123456\",\n  \"email\": \"correo-invalido\",\n  \"mensaje\": \"Este formulario debería fallar por validaciones.\"\n}"
+        },
+        "url": {
+          "raw": "https://nodejs-api-resend-devhub-production.up.railway.app/api/send-email",
+          "protocol": "https",
+          "host": [
+            "nodejs-api-resend-devhub-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "send-email"
+          ]
+        },
+        "description": "Ejemplo que debería fallar por no cumplir las validaciones"
+      },
+      "response": []
+    }
+  ]
+}
